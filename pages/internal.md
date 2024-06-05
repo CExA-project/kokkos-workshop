@@ -3,7 +3,7 @@
 #SBATCH --job-name=kokkos
 #SBATCH --output=output
 #SBATCH --error=error
-#SBATCH --time=00:10:00
+#SBATCH --time=00:05:00
 #SBATCH --ntasks=40
 #SBATCH --partition=cpu_short
 
@@ -23,7 +23,7 @@ make -C build  install
 #SBATCH --job-name=kokkos
 #SBATCH --output=output
 #SBATCH --error=error
-#SBATCH --time=00:10:00
+#SBATCH --time=00:05:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
 #SBATCH -p gpu_test
@@ -45,7 +45,7 @@ make -C build  install
 #SBATCH --job-name=kokkos
 #SBATCH --output=output
 #SBATCH --error=error
-#SBATCH --time=00:10:00
+#SBATCH --time=00:05:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH -p gpua100

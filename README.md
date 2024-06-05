@@ -57,16 +57,98 @@ module load gcc/11.2.0/gcc-4.8.5
 module load cuda/12.2.1/gcc-11.2.0
 ```
 
-Installed Kokkos version for V100:
+- Installed Kokkos version for V100:
 
 ```bash
 source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_cuda12_v100.sh
 # -> provides $KOKKOS_HOME
 ```
 
-Installed Kokkos version for A100:
+using the following flags:
+```bash
+cmake -B build -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=${KOKKOS_HOME} -DKokkos_ENABLE_OPENMP=ON -DKokkos_ENABLE_CUDA=ON -DKokkos_ARCH_VOLTA70=ON -DKokkos_ENABLE_CUDA_LAMBDA=ON -DCMAKE_CXX_EXTENSIONS=ON -DKokkos_ENABLE_CUDA_CONSTEXPR=ON
+```
+
+- Installed Kokkos version for A100:
 
 ```bash
 source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_cuda12_a100.sh
 # -> provides $KOKKOS_HOME
+```
+
+### Tutorial
+
+Slurm example to compile and execute a tutorial exercise with OpenMP backend on a CPU node:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=kokkos
+#SBATCH --output=output
+#SBATCH --error=error
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=4
+#SBATCH --partition=cpu_short
+
+# Load here your modules and prepare your env
+
+module load ...
+
+# to use an already installed version of Kokkos
+export Kokkos_ROOT=...
+
+set -x
+cd ${SLURM_SUBMIT_DIR}
+
+# OpenMP parameters
+export OMP_PROC_BIND=spread
+export OMP_PLACES=threads
+export OMP_NUM_THREADS=4
+
+# Execution
+./build_cuda/Begin/$(basename $(pwd))
+
+# Execution solution
+./build_cuda/Solution/$(basename $(pwd))_Solution
+
+```
+
+Slurm example to compile and execute a tutorial exercise with OpenMP and CUDA backend on a GPU node:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=kokkos
+#SBATCH --output=output
+#SBATCH --error=error
+#SBATCH --time=00:10:00
+#SBATCH --cpus-per-task=10
+#SBATCH -p gpu_test
+#SBATCH --gres=gpu:1
+
+# Load here your modules and prepare your env
+
+module load ...
+
+# to use an already installed version of Kokkos
+export Kokkos_ROOT=...
+
+
+set -x
+cd ${SLURM_SUBMIT_DIR}
+
+export Kokkos_ROOT=$KOKKOS_HOME
+
+cmake -B build_cuda -DCMAKE_CXX_COMPILER=g++ -DKokkos_ENABLE_CUDA=ON
+
+make -C build_cuda -j
+
+# OpenMP parameters
+export OMP_PROC_BIND=spread
+export OMP_PLACES=threads
+export OMP_NUM_THREADS=1
+
+# Execution
+./build_cuda/Begin/$(basename $(pwd))
+
+# Execution solution
+./build_cuda/Solution/$(basename $(pwd))_Solution
 ```
