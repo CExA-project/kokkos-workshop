@@ -147,10 +147,10 @@ export OMP_PLACES=threads
 export OMP_NUM_THREADS=4
 
 # Execution
-./build_cuda/Begin/$(basename $(pwd))
+./build/Begin/$(basename $(pwd))
 
 # Execution solution
-./build_cuda/Solution/$(basename $(pwd))_Solution
+./build/Solution/$(basename $(pwd))_Solution
 
 ```
 
