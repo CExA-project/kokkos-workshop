@@ -11,7 +11,7 @@
 ## Ruche cluster
 
 Ruche is the mesocentre of Paris-Saclay. It provides a computing environment for research and teaching.
-Ruche is equipped of both CPU (Intel Xeon Gold 6230 20C @ 2.1GHz) and GPU nodes (Nvidia Tesla V100 and A100).
+Ruche is equipped with both CPU (Intel Xeon Gold 6230 20C @ 2.1GHz) and GPU nodes (Nvidia Tesla V100 and A100).
 
 ### Connect to Ruche
 
@@ -45,7 +45,7 @@ We provide an already installed verison of Kokkos 4.3.1 in case of:
 
 ```bash
 source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_gnu11.2.sh
-# -> provides $KOKKOS_HOME
+# -> provides $Kokkos_ROOT=...
 ```
 
 
