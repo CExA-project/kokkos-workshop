@@ -54,8 +54,8 @@ source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_gnu11.2.sh
 Preferred modules for the NVIDIA environment:
 
 ```bash
-module load cmake/3.28.3/gcc-11.2.0
 module load gcc/11.2.0/gcc-4.8.5
+module load cmake/3.28.3/gcc-11.2.0
 module load cuda/12.2.1/gcc-11.2.0
 ```
 
