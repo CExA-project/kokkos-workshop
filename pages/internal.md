@@ -27,6 +27,7 @@ make -C build  install
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=10
 #SBATCH -p gpu_test
+#SBATCH --exclude=ruche-gpu08  # This node has an older CUDA version
 #SBATCH --gres=gpu:1
 
 source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_cuda12_v100.sh
