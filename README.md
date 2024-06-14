@@ -41,7 +41,7 @@ module load gcc/11.2.0/gcc-4.8.5
 module load cmake/3.28.3/gcc-11.2.0
 ```
 
-We provide an already installed verison of Kokkos 4.3.1 in case of:
+We provide an already installed version of Kokkos 4.3.1 in case of:
 
 ```bash
 source /gpfs/workdir/cexaci/installation/env/kokkos4.3.1_gnu11.2.sh
