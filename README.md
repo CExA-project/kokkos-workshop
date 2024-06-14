@@ -165,7 +165,7 @@ Slurm example to compile and execute a tutorial exercise with OpenMP and CUDA ba
 #SBATCH --error=error
 #SBATCH --time=00:10:00
 #SBATCH --cpus-per-task=10
-#SBATCH -p gpu_test
+#SBATCH --partition=gpu_test
 #SBATCH --exclude=ruche-gpu08  # This node has an older CUDA version
 #SBATCH --gres=gpu:1
 
@@ -217,7 +217,7 @@ Slurm example to compile and execute a tutorial exercise with OpenMP and CUDA ba
 #SBATCH --error=error
 #SBATCH --time=00:10:00
 #SBATCH --cpus-per-task=10
-#SBATCH -p gpua100
+#SBATCH --partition=gpua100
 #SBATCH --gres=gpu:1
 
 # ____________________________________________________________________
