@@ -147,7 +147,7 @@ export OMP_PLACES=threads
 export OMP_NUM_THREADS=4
 
 # Execution
-./build/Begin/$(basename $(pwd))
+./build/Begin/$(basename $(pwd))_Exercise
 
 # Execution solution
 ./build/Solution/$(basename $(pwd))_Solution
@@ -200,7 +200,7 @@ export OMP_PLACES=threads
 export OMP_NUM_THREADS=1
 
 # Execution
-./build_cuda/Begin/$(basename $(pwd))
+./build_cuda/Begin/$(basename $(pwd))_Exercise
 
 # Execution solution
 ./build_cuda/Solution/$(basename $(pwd))_Solution
@@ -251,7 +251,7 @@ export OMP_PLACES=threads
 export OMP_NUM_THREADS=1
 
 # Execution
-./build_cuda/Begin/$(basename $(pwd))
+./build_cuda/Begin/$(basename $(pwd))_Exercise
 
 # Execution solution
 ./build_cuda/Solution/$(basename $(pwd))_Solution
