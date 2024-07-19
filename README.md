@@ -138,7 +138,7 @@ export Kokkos_ROOT=...
 # Compilation
 
 cmake -B build -DCMAKE_CXX_COMPILER=g++
-make -C build -j
+cmake --build build --parallel 4
 
 # ____________________________________________________________________
 # Execution
@@ -191,7 +191,7 @@ export Kokkos_ROOT=...
 # Compilation
 
 cmake -B build_cuda -DCMAKE_CXX_COMPILER=g++ -DKokkos_ENABLE_CUDA=ON
-make -C build_cuda -j
+cmake --build build_cuda --parallel 4
 
 # ____________________________________________________________________
 # Execution
@@ -242,7 +242,7 @@ export Kokkos_ROOT=...
 # Compilation
 
 cmake -B build_cuda -DCMAKE_CXX_COMPILER=g++ -DKokkos_ENABLE_CUDA=ON
-make -C build_cuda -j
+cmake --build build_cuda --parallel 4
 
 # ____________________________________________________________________
 # Execution
