@@ -38,7 +38,7 @@ Preferred modules for GNU compilers:
 
 ```bash
 module load gcc/11.2.0/gcc-4.8.5
-module load cmake/3.28.3/gcc-11.2.0
+module load cmake/3.27.9/gcc-11.2.0
 module load git/2.39.1/gcc-11.2.0-tcltk
 ```
 
@@ -56,7 +56,7 @@ Preferred modules for the NVIDIA environment:
 
 ```bash
 module load gcc/11.2.0/gcc-4.8.5
-module load cmake/3.28.3/gcc-11.2.0
+module load cmake/3.27.9/gcc-11.2.0
 module load git/2.39.1/gcc-11.2.0-tcltk
 module load cuda/12.2.1/gcc-11.2.0
 ```
